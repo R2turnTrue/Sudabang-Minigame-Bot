@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -17,5 +18,5 @@ async def on_message(message):
     if message.content.startswith("/미니게임 테스트"):
         await message.channel.send("테스트")
 
-
-client.run("봇토큰")
+access_token = os.environ("BOT_TOKEN")
+client.run(access_token)
